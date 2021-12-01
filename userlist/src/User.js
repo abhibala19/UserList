@@ -6,27 +6,24 @@ class User extends Component {
 
         this.state = {
             userList: [],
-            firstName: String = "",
-            lastName: String = "",
-            email: String = "",
-            dateOfBirth: Date,
             userObj: {}
-
-
         }
     }
 
-    clickHandler = async(event) => {
+    clickHandler = async (event) => {
         console.log("inside onclick of save")
         event.preventDefault();
-await        this.setState({
+
+        await this.setState({
             userList: [
                 ...this.state.userList,
                 this.state.userObj
-            ]
+            ],
+            userObj : {}
 
         })
-        console.log(this.state.userList)
+
+        // console.log(this.state.userList)
 
     }
     handleChange = (event, name) => {
@@ -69,7 +66,7 @@ await        this.setState({
                     <br />
                     <button onClick={this.clickHandler}>Save</button>
                 </div>
-                {this.state.userList.length != 0 &&  <div><UserLists user={this.state.userList}/> </div> }
+                {this.state.userList.length != 0 && <div><UserLists arr={this.state.userList} /> </div>}
             </form>
 
 
