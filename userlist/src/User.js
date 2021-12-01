@@ -16,10 +16,10 @@ class User extends Component {
         }
     }
 
-    clickHandler = event => {
+    clickHandler = async(event) => {
         console.log("inside onclick of save")
         event.preventDefault();
-        this.setState({
+await        this.setState({
             userList: [
                 ...this.state.userList,
                 this.state.userObj
