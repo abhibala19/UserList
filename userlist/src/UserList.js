@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 class UserList extends Component {
     render() {
+        const {rows} =this.props
+        console.log(rows)
         return (
             
                 <table>
@@ -10,12 +12,6 @@ class UserList extends Component {
                         <th>LastName</th>
                         <th>Email</th>
                         <th>DateOfBirth</th>
-                    </tr>
-                    <tr>
-                        <td>{this.props.userObj.firstName}</td>
-                        <td>{this.props.userObj.lastName}</td>
-                        <td>{this.props.userObj.Email}</td>
-                        <td>{this.props.userObj.DateOfBirth}</td>
                     </tr>
                 </table>
         )
