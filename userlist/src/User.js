@@ -10,20 +10,23 @@ class User extends Component {
         }
     }
 
-    clickHandler = async (event) => {
+    clickHandler =  (event) => {
         console.log("inside onclick of save")
-        event.preventDefault();
+        // event.preventDefault();
+        this.state.userList.push(this.state.userObj);
 
-        await this.setState({
-            userList: [
-                ...this.state.userList,
-                this.state.userObj
-            ],
+         this.setState({
+            // userList: [
+            //     ...this.state.userList,
+            //     this.state.userObj
+            // ],
+            
             userObj : {}
 
         })
 
-        // console.log(this.state.userList)
+        console.log(this.state.userList)
+        debugger
 
     }
     handleChange = (event, name) => {
