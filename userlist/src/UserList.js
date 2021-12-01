@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ReactTable from 'react-table'
+import Table from "@material-ui/core/Table";
 import User from './User'
 class UserList extends Component {
     constructor(props) {
@@ -10,21 +12,29 @@ class UserList extends Component {
     }
 
     render() {
-        console.log(this.state.userList)
         return (
-
-            <table>
-                <tr>
-                    <th>FirstName  </th>
-                    <th>  LastName  </th>
-                    <th> Email  </th>
-                    <th >DateOfBirth  </th>
-                </tr>
-                {this.state.userList.map(( user =>
-                    <tr key={user.firstName}>{user.firstName}{ }{user.lastName}{  }{user.Email}{user.DateOfBirth}</tr>
+            <Table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Date Of Birth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.state.userList.map((user =>
+                        <tr>
+                            <td>{user.firstName}</td>
+                            <td>{user.lastName}</td>
+                            <td>{user.Email}</td>
+                            <td>{user.DateOfBirth}</td>
+                        </tr>
                     ))}
-            </table>
-        )
+                </tbody>
+
+            </Table>
+        );
     }
 }
 
