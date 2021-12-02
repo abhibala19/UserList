@@ -10,17 +10,17 @@ class User extends Component {
             userObj: {}
         }
     }
-    clearField = (event) => {
-        Array.from(event.target).forEach((e) => (e.value = ""));
-    }
+    // clearField = (event) => {
+    //     Array.from(event.target).forEach((e) => (e.value = ""));
+    // }
 
     clickHandler = (event) => {
         this.state.userList.push(this.state.userObj);
-        this.clearField(event);
         this.setState({
             // userObj: { firstName: "", lastName: "", Email: "", DateOfBirth: "" }
             userObj:{}
         })
+
     }
     handleChange = (event, name) => {
         this.state.userObj[name] = event
@@ -55,7 +55,6 @@ class User extends Component {
                         value={this.state.userObj.DateOfBirth ? "" : this.state.userObj.DateOfBirth}
                         onChange={(event) => { this.handleChange(event.target.value, "DateOfBirth") }}></input>
 
-                    <br />
                     <br />
                     <br />
                     <button onClick={this.clickHandler}>Save</button>
