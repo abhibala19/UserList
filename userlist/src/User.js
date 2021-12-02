@@ -26,8 +26,8 @@
             })
 
         }
-        handleDateChange =(event,dob) => {
-            this.state.userObj[dob] = event
+        handleDateChange =(event) => {
+            this.state.userObj.DateOfBirth = event
         }
         handleChange = (event, name) => {
             this.state.userObj[name] = event
@@ -60,8 +60,8 @@
                         <Calendar 
                         id="inputField"
                         value={this.state.userOfObj.DateOfBirth ?"":this.state.userOfObj.DateOfBirth}
-                        onChange={ (event) => { this.handleDateChange(event.target.value,"DateOfBirth")}} />
-                        {/* <input type="text" name="DateOfBirth"
+                        onChange={ (event) => { this.handleDateChange(event.target.value)}} />
+          {/* <input type="text" name="DateOfBirth"
                             id="inputField"
                             value={this.state.userObj.DateOfBirth}
                             onChange={(event) => { this.handleChange(event.target.value, "DateOfBirth") }}></input> */}
